@@ -1,0 +1,10 @@
+{
+  "first" : {
+    "id" : "1",
+    "command" : "foo"
+  },
+  "tail" : [
+    { "id": "2", "command": "bar"},
+    { "id": "3", "command": "baz"}
+  ]
+}
