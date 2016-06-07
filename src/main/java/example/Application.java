@@ -2,6 +2,7 @@ package example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.jms.annotation.EnableJms;
 
@@ -13,6 +14,8 @@ import org.springframework.jms.annotation.EnableJms;
 public class Application {
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext ctx = SpringApplication.run(Application.class);
+        SpringApplicationBuilder springApplicationBuilder = new SpringApplicationBuilder(Application.class);
+        springApplicationBuilder.sources(Application.class).run(args);
+//        ConfigurableApplicationContext ctx = SpringApplication.run(Application.class);
     }
 }
