@@ -16,6 +16,5 @@ public class Application {
     public static void main(String[] args) {
         SpringApplicationBuilder springApplicationBuilder = new SpringApplicationBuilder(Application.class);
         springApplicationBuilder.sources(Application.class).run(args);
-//        ConfigurableApplicationContext ctx = SpringApplication.run(Application.class);
     }
 }
