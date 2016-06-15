@@ -54,7 +54,7 @@ public class UploadController {
     }
 
     public void addHandler(CommandHandler handler) {
-        LOG.info("addHandler){})", handler);
+        LOG.info("addHandler({})", handler);
         commandHandlers.add(handler);
     }
 
