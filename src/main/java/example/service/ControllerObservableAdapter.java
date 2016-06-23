@@ -14,14 +14,14 @@ import rx.Observable;
  * Created by ton on 02/06/16.
  */
 @Component
-public class ObserveableAdapter  {
+public class ControllerObservableAdapter implements ObservableAdapter {
 
     private final UploadController uploadController;
 
-    private static final Logger LOG = LoggerFactory.getLogger(ObserveableAdapter.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ControllerObservableAdapter.class);
 
     @Autowired
-    public ObserveableAdapter(UploadController uploadController) {
+    public ControllerObservableAdapter(UploadController uploadController) {
         this.uploadController = uploadController;
         LOG.info("Initialized");
     }
@@ -30,6 +30,7 @@ public class ObserveableAdapter  {
      * Create an observeable stream of commands.
      * @return an {@link Observable} containing POSTed commands.
      */
+    @Override
     public Observable<ItemCommand> getCommandStream() {
         LOG.info("getCommandStream()");
         return Observable.create(observer -> {
