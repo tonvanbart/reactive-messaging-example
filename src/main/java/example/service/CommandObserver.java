@@ -13,13 +13,10 @@ import example.domain.ItemCommand;
 @Service
 public class CommandObserver {
 
-    private final ControllerObservableAdapter observeableAdapter;
-
     private static final Logger LOG = LoggerFactory.getLogger(CommandObserver.class);
 
     @Autowired
     public CommandObserver(ControllerObservableAdapter observeableAdapter) {
-        this.observeableAdapter = observeableAdapter;
         observeableAdapter.getCommandStream().subscribe(command -> reportObserved(command));
         LOG.info("Initialized");
     }

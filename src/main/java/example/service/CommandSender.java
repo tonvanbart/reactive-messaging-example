@@ -17,14 +17,11 @@ public class CommandSender {
 
     private final JmsTemplate jmsTemplate;
 
-    private final ControllerObservableAdapter observableAdapter;
-
     private static final Logger LOG = LoggerFactory.getLogger(CommandSender.class);
 
     @Autowired
     public CommandSender(JmsTemplate jmsTemplate, ControllerObservableAdapter observableAdapter) {
         this.jmsTemplate = jmsTemplate;
-        this.observableAdapter = observableAdapter;
         observableAdapter.getCommandStream().subscribe(this::forwardCommand);
         LOG.info("subscribed");
     }

@@ -15,13 +15,10 @@ import rx.schedulers.Schedulers;
 @Service
 public class SlowObserver {
 
-    private final ControllerObservableAdapter observeableAdapter;
-
     private static final Logger LOG = LoggerFactory.getLogger(SlowObserver.class);
 
     @Autowired
     public SlowObserver(ControllerObservableAdapter observeableAdapter) {
-        this.observeableAdapter = observeableAdapter;
         observeableAdapter.getCommandStream()
                 .observeOn(Schedulers.computation())
                 .subscribe(command -> slowLogging(command));
