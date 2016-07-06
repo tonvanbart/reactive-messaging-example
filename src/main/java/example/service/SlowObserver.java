@@ -28,10 +28,10 @@ public class SlowObserver {
     }
 
     private void slowLogging(ItemCommand command) {
-        LOG.info("slow...");
+        LOG.info("slow... on '{}'", command);
         try {
             Thread.sleep(2000);
-            LOG.info("{} items in tail", command.getTail().size());
+            LOG.info("...finished slow processing {}", command);
         } catch (InterruptedException e) {
             LOG.warn("Interrupted");
         }

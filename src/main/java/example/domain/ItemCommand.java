@@ -27,4 +27,9 @@ public class ItemCommand {
     public void setTail(Queue<Item> tail) {
         this.tail = tail;
     }
+
+    @Override
+    public String toString() {
+        return String.format("ItemCommand(%s,%s in tail)", first, tail.size());
+    }
 }

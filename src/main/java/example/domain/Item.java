@@ -25,4 +25,9 @@ public class Item {
     public void setCommand(String command) {
         this.command = command;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Item(%s,%s)", id, command);
+    }
 }
